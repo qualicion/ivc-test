@@ -1,23 +1,23 @@
 export class practiceTestLoginPage {
   constructor() {
-    this.usernameField = "#username";
-    this.passwordField = "#password";
-    this.submitButton = "#submit";
-    this.practiceTestLoginPageHeader = ".post-title";
+    this.usernameFieldSelector = "#username";
+    this.passwordFieldSelector = "#password";
+    this.submitButtonSelector = "#submit";
+    this.practiceTestLoginPageHeaderSelector = ".post-title";
   }
   enterUsername(username) {
-    cy.get(this.usernameField).clear().type(username);
+    cy.get(this.usernameFieldSelector).clear().type(username);
   }
   enterPassword(password) {
-    cy.get(this.passwordField).clear().type(password);
+    cy.get(this.passwordFieldSelector).clear().type(password);
   }
 
-  submitForm() {
-    cy.get(this.submitButton).click();
+  clickSubmitButton() {
+    cy.get(this.submitButtonSelector).click();
   }
 
   loginMessage() {
-    return cy.get(this.practiceTestLoginPageHeader);
+    return cy.get(this.practiceTestLoginPageHeaderSelector);
   }
 }
 
