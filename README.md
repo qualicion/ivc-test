@@ -15,8 +15,6 @@ Also a few settings has been configured under cypress.config.js file
 
 - Go to https://github.com/qualicion/ivc-test to clone the project repository to your local machine.
 - Navigate to your project directory in the terminal.
-- Run Cypress with one of the following commands: npx cypress open
-- Or, Run tests in headless mode: npx cypress run
 
 # To run the tests, follow these steps:
 
