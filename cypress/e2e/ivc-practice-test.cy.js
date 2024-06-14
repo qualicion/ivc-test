@@ -20,7 +20,7 @@ describe("Practise test automation application", () => {
     // Enter login details
     onPracticeTestLoginPage.enterUsername("student");
     onPracticeTestLoginPage.enterPassword("Password123");
-    onPracticeTestLoginPage.submitForm();
+    onPracticeTestLoginPage.clickSubmitButton();
 
     // Verify successful login to practice
     onPracticeTestLoginPage
