@@ -7,14 +7,18 @@ Javascript is the chosen language used within this framework.
 This test uses the Page Object Model for better test maintenance and scalability.
 Also a few settings has been configured under cypress.config.js file
 
-## Install Node.js and npm if you haven't already.
+## Setup environment
 
-- Install Cypress via npm: npm install cypress --save-dev
+- Install Node.js and npm if you haven't already.
 
 ## Clone the project
 
 - Go to https://github.com/qualicion/ivc-test to clone the project repository to your local machine.
 - Navigate to your project directory in the terminal.
+
+# Install Cypress
+
+- Run npm install to install dependencies within package.json
 
 # To run the tests, follow these steps:
 
