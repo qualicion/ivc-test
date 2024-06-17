@@ -1,4 +1,4 @@
-export class Navigation {
+class Navigation {
   practicePage() {
     cy.contains("Practice").click();
   }
