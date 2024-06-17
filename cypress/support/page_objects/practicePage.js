@@ -1,4 +1,4 @@
-export class practicePage {
+class practicePage {
   clickTestLogin() {
     cy.contains("a", "Test Login Page").click();
   }
