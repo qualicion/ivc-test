@@ -4,9 +4,13 @@ import { onPracticePage } from "../support/page_objects/practicePage";
 import { onContactPage } from "../support/page_objects/contactPage";
 import { onPracticeTestLoginPage } from "../support/page_objects/practiceTestLogin";
 
+const loginCredentials = {
+  userName: "student",
+  password: "Password123",
+};
+
 describe("Practise test automation application", () => {
   beforeEach("Open homepage", () => {
-    // Open practice test automation webpage
     cy.navigateToHomePage();
   });
 
@@ -18,9 +22,7 @@ describe("Practise test automation application", () => {
     onPracticePage.clickTestLogin();
 
     // Enter login details
-    onPracticeTestLoginPage.enterUsername("student");
-    onPracticeTestLoginPage.enterPassword("Password123");
-    onPracticeTestLoginPage.clickSubmitButton();
+    onPracticeTestLoginPage.login(loginCredentials);
 
     // Verify successful login to practice
     onPracticeTestLoginPage
@@ -29,11 +31,25 @@ describe("Practise test automation application", () => {
 
     // Go to contact page
     navigateTo.contactPage();
+
+    // Submit form on contact page
     onContactPage.clickSubmitButton();
 
-    // Verify error messages on the contact form
-    onContactPage.verifyNameFieldErrorMessage();
-    onContactPage.verifyEmailFieldErrorMessage();
-    onContactPage.verifyCommentErrorMessage();
+    // Assert correct error message is displayed
+    onContactPage.isFirstNameErrorMessageVisible().then(isVisible => {
+      expect(isVisible).to.be.true;
+    });
+
+    onContactPage.isLastNameErrorMessageVisible().then(isVisible => {
+      expect(isVisible).to.be.true;
+    });
+
+    onContactPage.isEmailErrorMessageVisible().then(isVisible => {
+      expect(isVisible).to.be.true;
+    });
+
+    onContactPage.commentOrMessageErrorMessageVisible().then(isVisible => {
+      expect(isVisible).to.be.true;
+    })
   });
 });
